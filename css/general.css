@@ -133,6 +133,81 @@ filter: alpha(opacity=95) !important;
 	margin:-100px 0 0 -100px; /* is width and height divided by two */
 }
 
+/* Animated bounce pins */
+.pin-1 {
+	position: absolute;
+	top: 180px;
+	right: 289px;
+}
+.pin-2 {
+	position: absolute;
+	bottom: 180px;
+	left: 289px;
+}
+.pin-3 {
+	position: absolute;
+	top: 180px;
+	left: 289px;
+}
+.pin-4 {
+	position: absolute;
+	left: 180px;
+	bottom: 289px;
+}
+.pin-5 {
+	position: absolute;
+	top: 580px;
+	left: 489px;
+}
+.hide-mobile {
+  	display: block;
+}
+*/
+.pulse {
+    border: 2px solid rgb(128, 192, 236);
+    -webkit-border-radius: 50%;
+    height: 9px;
+    width: 9px;
+    position: absolute;
+    -webkit-animation: pulsate 1s ease-out;
+    -webkit-animation-iteration-count: infinite; 
+    opacity: 1.0;
+}
+.pulse:before {
+    content:"";
+    display:block;
+    border: 2px solid rgb(128, 192, 236);
+    -webkit-border-radius: 50%;
+    height: 15px;
+    width: 15px;
+    position: absolute;
+    left:-4px;
+    top:-4px;
+    -webkit-animation: pulsate 1s ease-out;
+    -webkit-animation-iteration-count: infinite; 
+    -webkit-animation-delay: 0.1s;
+    opacity: 0.0;
+}
+.pulse:after {
+    content:"";
+    display:block;
+    border:2px solid rgb(128, 192, 236);
+    -webkit-border-radius: 50%;
+    height: 25px;
+    width: 25px;
+    position: absolute;
+    left:-9px;
+    top:-9px;
+    -webkit-animation: pulsate 1s ease-out;
+    -webkit-animation-iteration-count: infinite; 
+    -webkit-animation-delay: 0.2s;
+    opacity: 0.0;
+}
+@-webkit-keyframes pulsate {
+    0% {-webkit-transform: scale(0.1, 0.1); opacity: 0.0;}
+    50% {opacity: 1.0;}
+    100% {-webkit-transform: scale(1.2, 1.2); opacity: 0.0;}
+}
 
 /* Button */ 
 .mybutton_standard {
@@ -1213,11 +1288,9 @@ p.copyright {
 		margin-bottom: 20px;
 		padding: 0;
 	}
-
 	ul.intro-social-buttons > li:last-child {
 		margin-bottom: 0;
 	}
-
 	.intro-divider {
 		width: 100%;
 	}
@@ -1229,20 +1302,24 @@ p.copyright {
 		float: none;
 		margin: 0 auto 20px;
 	}
-
 	.mockup-right {
 		
 	}
-
 	.joiner {
 		display: block;
 	}
+    .hide-mobile {
+        display:none;
+    }
 }
 
 @media screen and (max-width: 400px) {
 	.mockup-content > span:nth-last-child(2) {
 		width: calc(100% - 210px);
 	}
+    .hide-mobile {
+        display: none;
+    }
 }
 
 @media screen and (max-width: 25em) {
@@ -1250,5 +1327,8 @@ p.copyright {
 	.codrops-icon span {
 		display: none;
 	}
+    .hide-mobile {
+        display: none;
+    }
 
 }
